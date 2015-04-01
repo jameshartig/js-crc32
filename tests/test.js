@@ -12,4 +12,5 @@ assert.equal(crc32(arr), 'd202ef8d');
 //compared against https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/mann/crc32.n.html
 assert.equal(crc32('Hello, World!'), 'ec4ac3d0');
 
+//https://github.com/Sembiance/mhash/issues/1
 assert.equal(crc32('alejandro'), 'aac5a14f');
