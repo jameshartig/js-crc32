@@ -6,6 +6,12 @@ var assert = require('assert'),
 arr = [0, 1, 2, 3];
 assert.equal(crc32(arr), '8bb98613');
 
+arr = [{id: 0}, {id: 1}, {id: 2}, {id: 3}];
+assert.equal(crc32(arr), '8bb98613');
+
+arr = {models: [{id: 0}, {id: 1}, {id: 2}, {id: 3}]};
+assert.equal(crc32(arr), '8bb98613');
+
 arr = [Math.pow(2, 32)];
 assert.equal(crc32(arr), 'd202ef8d');
 

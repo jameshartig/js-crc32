@@ -34,15 +34,22 @@
     }
 
     function crc32(arr) {
-        var values = typeof arr === 'string' ? stringToArray(arr) : arr,
+        var values = typeof arr === 'string' ? stringToArray(arr) : (arr.models || arr),
             crc = -1,
             i = 0,
-            l = values.length;
+            l = values.length,
+            isObjects = (typeof values[0] === 'object'),
+            id = 0;
         if (CRC32_TABLE === undefined) {
             genCRC32Table();
         }
         for (; i < l; i++) {
-            crc = CRC32_TABLE[(crc ^ values[i]) & 0xFF] ^ (crc >>> 8);
+            if (isObjects) {
+                id = values[i].id >>> 0;
+            } else {
+                id = values[i];
+            }
+            crc = CRC32_TABLE[(crc ^ id) & 0xFF] ^ (crc >>> 8);
         }
         //bitflip then cast to 32-bit unsigned
         return (~crc >>> 0).toString(16);
