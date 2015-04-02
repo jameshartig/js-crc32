@@ -48,7 +48,7 @@
         return (~crc >>> 0).toString(16);
     }
 
-    if (module !== undefined) {
+    if (typeof module !== 'undefined') {
         module.exports = crc32;
     } else {
         window.crc32 = crc32;
