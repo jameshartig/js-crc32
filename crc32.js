@@ -20,7 +20,7 @@
     function genCRC32Table() {
         var i = 0, c = 0, b = 0;
         CRC32_TABLE = new arrayType(256);
-        for (i = 0; i < 256; i++) {
+        for (; i < 256; i++) {
             c = i;
             b = 8;
             while (b--) {
@@ -35,7 +35,7 @@
             crc = -1,
             i = 0,
             l = values.length,
-            isObjects = (typeof values[0] === objectStr),
+            isObjects = typeof values[0] === objectStr,
             id = 0;
         if (CRC32_TABLE === undefined) {
             genCRC32Table();
