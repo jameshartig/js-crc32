@@ -1,0 +1,23 @@
+{
+  "name": "tinycrc32",
+  "version": "0.1.0",
+  "description": "A very small (<1kb minified) crc32 library for browsers",
+  "main": "crc32.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastest963/js-crc32.git"
+  },
+  "keywords": [
+    "crc32",
+    "tiny",
+    "browser"
+  ],
+  "author": "James Hartig <fastest963@gmail.com>",
+  "license": "MIT"
+}
